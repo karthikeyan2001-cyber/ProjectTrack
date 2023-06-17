@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AdminPanel from './AdminPanel';
+import UserPanel from './UserPanel';
+import AdminLogin from './AdminLogin';
+import UserLogin from './UserLogin';
+import LandingPage from './LandingPage';
+import UserPortal from './UserPortal';
+import AdminPortal from './AdminPortal';
+import FormComponent from './FormComponent';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+      <Route path="/" element={<LandingPage/>} />
+        <Route path="/admin/register" element={<AdminPanel />} />
+        <Route path="/user/register" element={<UserPanel />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/user/login" element={<UserLogin />} />
+        <Route path="/admin/portal" element={<AdminPortal />} />
+        <Route path="/admin/proj" element={<FormComponent />} />
+        <Route path="/user/portal" element={<UserPortal />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -68,7 +68,7 @@ const FormComponent = () => {
         endDate: endDate,
       };
 
-      // Get a reference to the Firestore collection named "users"
+    
       const usersCollection = collection(firestore, 'admins');
 
       // Create a new document with the logged-in user's ID as the document ID
@@ -90,7 +90,7 @@ const FormComponent = () => {
       setSelectedUserEmail('');
       setIsFormOpen(false);
 
-      // Show success alert
+    
       alert('Success');
     } catch (error) {
       console.error('Error adding document:', error);

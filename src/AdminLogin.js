@@ -3,6 +3,7 @@ import { auth,firestore } from './firebase';
 import { loginWithEmailAndPassword } from './firebase';
 import { useNavigate } from 'react-router';
 import {collection,doc,setDoc,getDoc} from 'firebase/firestore';
+import AdminPotal from './AdminPortal'
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,6 +18,7 @@ const AdminLogin = () => {
       if (adminSnapshot.exists()) {
         navigate("/admin/portal");
         console.log('Admin login successful');
+        
   
       } else {
  
@@ -25,7 +27,7 @@ const AdminLogin = () => {
       }
      // console.log('User login successful');
 
-      
+    // localStorage.setItem('adminSession', JSON.stringify(user.uid));
     } catch (error) {
       console.error('Error logging in as user:', error);
     }

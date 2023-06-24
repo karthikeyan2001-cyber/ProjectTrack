@@ -29,8 +29,12 @@ const App = () => {
           }
         />
         {/* <Route path="/admin/portal" element={<AdminPortal />} />
-        <Route path="/admin/proj" element={<FormComponent />} /> */}
-        <Route path="/user/portal" element={<UserPortal />} />
+        <Route path="/admin/proj" element={<FormComponent />} /> 
+        <Route path="/user/portal" element={<UserPortal />} /> */}
+        <Route
+          path="/user/portal"
+          element={<UserPortal isAdminLoggedIn={isAdminLoggedIn} setIsAdminLoggedIn={setIsAdminLoggedIn} />}
+        />
       </Routes>
     </Router>
   );

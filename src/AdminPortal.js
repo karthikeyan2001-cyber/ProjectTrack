@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore';
 import { auth, firestore } from './firebase';
 
+
 const LandingPage = ({ isAdminLoggedIn, setIsAdminLoggedIn }) => {
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);

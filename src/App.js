@@ -25,7 +25,7 @@ const App = () => {
         <Route
           path="/admin/proj"
           element={
-            isAdminLoggedIn ? <FormComponent /> : <Navigate to="/admin/portal" />
+            isAdminLoggedIn ? <FormComponent /> : <Navigate to="/admin/login" />
           }
         />
         {/* <Route path="/admin/portal" element={<AdminPortal />} />

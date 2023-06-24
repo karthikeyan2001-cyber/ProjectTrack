@@ -27,16 +27,19 @@ const LandingPage = ({ isAdminLoggedIn, setIsAdminLoggedIn }) => {
       if (user) {
         const adminSnapshot = await getDoc(doc(firestore, 'admins', user.uid));
         setIsAdminLoggedIn(adminSnapshot.exists());
+      }else {
+        navigate('/admin/login'); 
       }
     };
 
     fetchProjects();
     checkAdminLoginStatus();
-  }, [setIsAdminLoggedIn]);
+  }, [navigate,setIsAdminLoggedIn]);
 
-  if (!isAdminLoggedIn) {
-    return <div>Please login as an admin to access the admin portal.</div>;
-  }
+  // if (!isAdminLoggedIn) {
+  //   navigate('/admin/login');
+  //   // return <div>Please login as an admin to access the admin portal.</div>;
+  // }
 
   const handleClick = () => {
     if (isAdminLoggedIn) {
